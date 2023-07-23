@@ -1,6 +1,6 @@
 if ! command -v docker &> /dev/null; then
     echo "Installing Docker..."
-    if ! curl -fsSL https://get.docker.com | sh; then
+    if ! curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg | sh; then
         echo "Failed to install Docker. Aborting."
         exit 1
     fi
